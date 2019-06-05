@@ -1,4 +1,4 @@
-namespace MTConnectGateway
+namespace OPC_UA_MTConnect
 {
     using System;
     using System.IO;

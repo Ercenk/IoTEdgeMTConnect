@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/modules/MTConnectGateway/MTConnectGateway.csproj"
+                "${workspaceFolder}/modules/OPC_UA_MTConnect/OPC_UA_MTConnect.csproj"
             ],
             "problemMatcher": "$tsc"
         },
@@ -17,7 +17,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/modules/MTConnectGateway/MTConnectGateway.csproj"
+                "${workspaceFolder}/modules/OPC_UA_MTConnect/OPC_UA_MTConnect.csproj"
             ],
             "problemMatcher": "$tsc"
         },
@@ -28,7 +28,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/modules/MTConnectGateway/MTConnectGateway.csproj"
+                "${workspaceFolder}/modules/OPC_UA_MTConnect/OPC_UA_MTConnect.csproj"
             ],
             "problemMatcher": "$tsc"
         }

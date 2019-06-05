@@ -1,5 +1,5 @@
 {
-  "$schema-template": "1.0.0",
+  "$schema-template": "2.0.0",
   "modulesContent": {
     "$edgeAgent": {
       "properties.desired": {
@@ -9,7 +9,13 @@
           "settings": {
             "minDockerVersion": "v1.25",
             "loggingOptions": "",
-            "registryCredentials": {}
+            "registryCredentials": {
+              "ercsbacr": {
+                "username": "$CONTAINER_REGISTRY_USERNAME_ercsbacr",
+                "password": "$CONTAINER_REGISTRY_PASSWORD_ercsbacr",
+                "address": "ercsbacr.azurecr.io"
+              }
+            }
           }
         },
         "systemModules": {
@@ -61,13 +67,13 @@
               "createOptions": {}
             }
           },
-          "MTConnectGateway": {
+          "OPC_UA_MTConnect": {
             "version": "1.0",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "${MODULES.MTConnectGateway}",
+              "image": "${MODULES.OPC_UA_MTConnect}",
               "createOptions": {}
             }
           }
@@ -78,8 +84,8 @@
       "properties.desired": {
         "schemaVersion": "1.0",
         "routes": {
-          "MTConnectGatewayToIoTHub": "FROM /messages/modules/MTConnectGateway/outputs/* INTO $upstream",
-          "sensorToMTConnectGateway": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/MTConnectGateway/inputs/input1\")"
+          "OPC_UA_MTConnectToIoTHub": "FROM /messages/modules/OPC_UA_MTConnect/outputs/* INTO $upstream",
+          "sensorToOPC_UA_MTConnect": "FROM /messages/modules/tempSensor/outputs/temperatureOutput INTO BrokeredEndpoint(\"/modules/OPC_UA_MTConnect/inputs/input1\")"
         },
         "storeAndForwardConfiguration": {
           "timeToLiveSecs": 7200

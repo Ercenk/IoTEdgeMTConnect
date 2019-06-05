@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "MTConnectGateway Remote Debug (.NET Core)",
+      "name": "OPC_UA_MTConnect Remote Debug (.NET Core)",
       "type": "coreclr",
       "request": "attach",
       "processId": "${command:pickRemoteProcess}",
@@ -11,7 +11,7 @@
         "pipeArgs": [
           "exec",
           "-i",
-          "MTConnectGateway",
+          "OPC_UA_MTConnect",
           "sh",
           "-c"
         ],
@@ -20,17 +20,17 @@
         "quoteArgs": true
       },
       "sourceFileMap": {
-        "/app": "${workspaceFolder}/modules/MTConnectGateway"
+        "/app": "${workspaceFolder}/modules/OPC_UA_MTConnect"
       },
       "justMyCode": true
     },
     {
-      "name": "MTConnectGateway Local Debug (.NET Core)",
+      "name": "OPC_UA_MTConnect Local Debug (.NET Core)",
       "type": "coreclr",
       "request": "launch",
-      "program": "${workspaceRoot}/modules/MTConnectGateway/bin/Debug/netcoreapp2.1/MTConnectGateway.dll",
+      "program": "${workspaceRoot}/modules/OPC_UA_MTConnect/bin/Debug/netcoreapp2.1/OPC_UA_MTConnect.dll",
       "args": [],
-      "cwd": "${workspaceRoot}/modules/MTConnectGateway",
+      "cwd": "${workspaceRoot}/modules/OPC_UA_MTConnect",
       "internalConsoleOptions": "openOnSessionStart",
       "stopAtEntry": false,
       "console": "internalConsole",
